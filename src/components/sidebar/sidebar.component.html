@@ -1,0 +1,50 @@
+<h1> Sidebar stuff </h1>
+<div class="tab-container">
+	<div class="tab" [class.selected]="selectedtab == 2" (click)="selectTab(2)">2D</div>
+	<div class="tab" [class.selected]="selectedtab == 3" (click)="selectTab(3)">3D</div>
+</div>
+<!--<div class="sidebar">
+	<div class="pure-menu">
+	</div>
+</div> 
+
+<a class="pure-menu-heading">Noise</a>
+<ul class="pure-menu-list">
+	<li class="pure-menu-item display-options">
+		<a class="menu-category">Display Options</a>
+		<div class="switches">
+			<div id="3dOptionTab" onclick="Sidebar.onTabClicked('3d')" class="switch" active>
+				3D
+			</div>
+			<div id="2dOptionTab" onclick="Sidebar.onTabClicked('2d')" class="switch">
+				2D
+			</div>
+		</div>
+		<div class="options" id="2dOptions" style="display: none">
+		</div>
+		<div class="options" id="3dOptions">
+			<div class="option">
+				<div class="row">
+					<label class="option-label" for="vertices-slider">
+						Vertices
+					</label>
+				</div>
+				<div class="row">
+					<div>5</div>
+					<input min="5" value="20" max="1000" class="slider" id="vertices-range-slider" 
+						onchange="Sidebar.changeVerticesValue()" name="vertices-slider" type="range">
+					<div>1000</div>
+				</div>
+				<div class="row">
+					<div id="vertices-slider-value">20</div>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="pure-menu-item display-options">
+		<a class="menu-category">Noise Functions</a>
+		<div id="noise-functions">
+			
+		</div>
+	</li>
+</ul> -->

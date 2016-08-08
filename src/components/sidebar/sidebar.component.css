@@ -1,0 +1,14 @@
+.tab-container  {
+    display: flex;
+    width: 100%;
+}
+
+.tab {
+    background-color: #ddd;
+    flex: 1;
+    height: 30px;
+}
+
+.tab.active {
+    background-color: #bbb;
+}
