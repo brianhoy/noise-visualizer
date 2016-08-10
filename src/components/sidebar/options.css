@@ -1,0 +1,7 @@
+.option .slider-container {
+    display: flex;
+}
+
+.option input[type="range"] {
+    width: 100%;
+}

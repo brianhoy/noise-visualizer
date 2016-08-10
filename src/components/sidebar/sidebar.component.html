@@ -1,8 +1,14 @@
-<h1> Sidebar stuff </h1>
+<h1> Noise Visualizer </h1>
 <div class="tab-container">
-	<div class="tab" [class.selected]="selectedtab == 2" (click)="selectTab(2)">2D</div>
-	<div class="tab" [class.selected]="selectedtab == 3" (click)="selectTab(3)">3D</div>
+	<div class="tab" [class.selected]="selectedTab == 2" (click)="selectTab(2)">2D Image</div>
+	<div class="tab" [class.selected]="selectedTab == 3" (click)="selectTab(3)">3D Heightmap</div>
 </div>
+<div class="tab-content">
+	<two-d-options *ngIf="selectedTab == 2"> </two-d-options>
+	<three-d-options *ngIf="selectedTab == 3"> </three-d-options>
+</div>
+<noise-tree [noiseModel]="baseNoise"></noise-tree>
+
 <!--<div class="sidebar">
 	<div class="pure-menu">
 	</div>

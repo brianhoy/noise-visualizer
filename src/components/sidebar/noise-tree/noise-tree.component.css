@@ -1,0 +1,32 @@
+:host {
+    display: block;
+}
+
+h3, h4 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.children-header {
+    width: 100%;
+    border: none;
+    text-align: left;
+    background-color: #dedede;
+}
+
+.children-header * {
+    display: inline-block;
+}
+
+.children-header:hover {
+    background-color: #efefef;
+}
+
+ul {
+    padding-left: 20px;
+    margin: 0 0;
+}
+
+li {
+    list-style-type: none;
+}

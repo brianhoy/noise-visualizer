@@ -7,8 +7,20 @@
     background-color: #ddd;
     flex: 1;
     height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
 }
 
-.tab.active {
+.tab.selected {
     background-color: #bbb;
+}
+
+.tab-content {
+    margin: 0;
+    background-color: #dfdfdf;
+}
+
+.tab-content h2 {
+    font-size: 25px;
+    margin: 0;
 }

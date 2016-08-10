@@ -1,0 +1,18 @@
+<h2>3d Display Options</h2>
+<div class="option">
+    <div class="row">
+        <label class="option-label" for="vertices-slider">
+            Vertices
+        </label>
+    </div>
+    <div class="slider-container">
+        <div>5</div>
+        <input min="5" value="20" max="1000" class="slider" id="vertices-range-slider" 
+            (change)="updateVerticesSlider($event)" name="vertices-slider" type="range">
+        <div>1000</div>
+    </div>
+    <div class="row">
+        <div> {{ vertices }} </div>
+    </div>
+</div>
+<button (click)="updateView()" class="pure-button">Update View</button>

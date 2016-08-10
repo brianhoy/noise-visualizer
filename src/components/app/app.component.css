@@ -1,4 +1,5 @@
 .sidebar {
+    overflow-y: scroll;
     background-color: #eee;
     width: 250px;
     position: absolute;
