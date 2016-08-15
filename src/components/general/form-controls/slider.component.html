@@ -1,0 +1,8 @@
+<label [attr.for]="sliderName">{{label}}</label>
+<p>{{description}}</p>
+<div class="slider">
+    <span>{{min}}</span>
+    <input [(ngModel)]="value" min="{{min}}" max="{{max}}" step={{step}} value="{{startingValue}}" name="{{sliderName}}" type="range"/>
+    <span>{{max}}</span>
+</div>
+<input type="number" [(ngModel)]="value" placeholder="{{startingValue}}">

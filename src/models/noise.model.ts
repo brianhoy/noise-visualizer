@@ -1,6 +1,7 @@
 export class NoiseModel {
     public SimplexNoise: any;
     public WorleyNoise: any;
+    public uid: number;
 
     constructor(
         /* Currently either 'Cellular' or 'Simplex' */
@@ -34,6 +35,8 @@ export class NoiseModel {
 		this.low = this.low || 0;
 		this.high = this.high || 100;
 		this.operation = this.operation || "multiply";
-        this.children = this.children || []; 
+        this.children = this.children || [];
+
+        this.uid = Math.random();
     }
 }

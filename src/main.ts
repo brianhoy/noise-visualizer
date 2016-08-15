@@ -1,9 +1,8 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
-import { AppComponent } from './components/app/app.component';
-import { NoiseOptionService } from './services/noise-options.service';
+// The browser platform with a compiler
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-if (process.env.ENV === 'production') {
-  enableProdMode();
-}
-bootstrap(AppComponent, [NoiseOptionService]);
+// The app module
+import { AppModule } from './app.module';
+
+// Compile and launch the module
+platformBrowserDynamic().bootstrapModule(AppModule);

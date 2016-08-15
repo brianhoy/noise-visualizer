@@ -7,7 +7,10 @@
 	<two-d-options *ngIf="selectedTab == 2"> </two-d-options>
 	<three-d-options *ngIf="selectedTab == 3"> </three-d-options>
 </div>
-<noise-tree [noiseModel]="baseNoise"></noise-tree>
+<div class="noises">
+	<h2>Noise Tree</h2>
+	<noise-tree [noiseModel]="baseNoise"></noise-tree>
+</div>
 
 <!--<div class="sidebar">
 	<div class="pure-menu">

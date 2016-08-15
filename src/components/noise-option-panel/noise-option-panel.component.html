@@ -1,0 +1,92 @@
+<!-- Configurable Values
+        /* Currently either 'Cellular' or 'Simplex' */
+        public type?: string,
+        public baseHeight?: number,
+        /* How many layers of noise there should be */
+        public octaves?: number,
+        /* A multiplier that determines how quickly the amplitudes 
+        diminish for each successive octave in a Perlin-noise function. */
+        public persistence?: number,
+        /* A multiplier that determines how quickly the frequency 
+        increases for each successive octave in a Perlin-noise function. */
+        public lancunarity?: number,
+        public frequency?: number,
+        /* Determines the minimum and maximum value you can get from this noise. */
+        public low?: number,
+        public high?: number,
+        /* Only used for child noise functions. Can be 'add', 'subtract', 'multiply', or 'divide'. */
+        public operation?: string,
+        public children?: NoiseModel[]
+-->
+
+<div class="noise-form-container">
+    <div class="row">
+        <h2>Noise Options</h2>
+        {{selectedNoise}}
+        <p *ngIf="selectedNoise == null">Select noise by clicking the title of one on the sidebar</p>
+    </div>
+    <div *ngIf="selectedNoise != null" class="flex-container">
+        <div class="option">
+            <label>Type</label>
+            <select [(ngModel)]="selectedNoise.type">
+                <option>Cellular</option>
+                <option>Simplex</option>
+            </select>
+        </div>
+        <div class="option">
+            <slider [min]="-500" [max]="500" [label]="'Base Height'"
+                [(ngModel)]="selectedNoise.baseHeight"
+                [description]="'Added to the noise at the end'"
+                [sliderName]="baseHeightSlider" [startingValue]="0" [step]="1"></slider>
+        </div>
+        <div class="option">
+            <slider [min]="1" [max]="16" [label]="'Octaves'"
+                [(ngModel)]="selectedNoise.octaves"
+                [description]="'How many layers of noise there should be '"
+                [sliderName]="octavesSlider" [startingValue]="1" [step]="1"></slider>
+        </div>
+        <div class="option">
+            <slider [min]="0" [max]="8" [label]="'Frequency'"
+                [(ngModel)]="selectedNoise.frequency"
+                [description]="'Multiplies the parameters of the noise function'"
+                [sliderName]="frequencySlider" [startingValue]="1" [step]="0.05"></slider>
+        </div>
+        <div class="option">
+            <slider [min]="0" [max]="1" [label]="'Amplitude'"
+                [(ngModel)]="selectedNoise.amplitude"
+                [description]="'Multiplies the output of the noise function'"
+                [sliderName]="amplitudeSlider" [startingValue]="2" [step]="0.05"></slider>
+        </div>
+        <div class="option">
+            <slider [min]="0" [max]="1" [label]="'Persistence'"
+                [(ngModel)]="selectedNoise.persistence" 
+                [description]="'A multiplier that determines how quickly the amplitudes 
+        diminish for each successive octave'"
+                [sliderName]="persistenceSlider" [startingValue]="0" [step]="1"></slider>
+        </div>
+        <div class="option">
+            <slider [min]="1" [max]="16" [label]="'Lancunarity'"
+                [(ngModel)]="selectedNoise.lancunarity" 
+                [description]="'A multiplier that determines how quickly the frequency 
+    increases for each successive octave'"
+                [sliderName]="lancunaritySlider" [startingValue]="2" [step]="0.5"></slider>
+        </div>
+    </div>
+</div>
+<!--
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="baseHeightSlider">Lancunarity</label>
+            <p>A multiplier that determines how quickly the frequency 
+    increases for each successive octave</p>
+            <div class="slider">
+                <span>1</span>
+                <input min="1" max="16" value="2" name="baseHeightSlider" type="range"/>
+                <span>16</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->

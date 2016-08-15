@@ -7,18 +7,27 @@ h3, h4 {
     font-weight: normal;
 }
 
-.children-header {
+.noise-header {
     width: 100%;
     border: none;
     text-align: left;
     background-color: #dedede;
 }
 
-.children-header * {
+.noise-header.selected {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.noise-header * {
     display: inline-block;
 }
 
-.children-header:hover {
+.noise-header.selected:hover {
+    background-color: dodgerblue;
+}
+
+.noise-header:hover {
     background-color: #efefef;
 }
 
@@ -29,4 +38,14 @@ ul {
 
 li {
     list-style-type: none;
+    background-color: #F3F3F3; 
+}
+
+li:hover {
+    background-color: #dedede;    
+}
+
+.toggleContainer {
+    width: 17px;
+    height: 17px;
 }
