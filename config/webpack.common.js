@@ -18,6 +18,7 @@ module.exports = {
     loaders: [
       {
         test: /\.ts$/,
+        exclude: /\.\(d.ts\)/,
         loaders: ['ts', 'angular2-template-loader']
       },
       {

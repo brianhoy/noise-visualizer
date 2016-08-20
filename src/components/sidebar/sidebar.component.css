@@ -32,3 +32,15 @@
     text-transform: uppercase;
     margin: 0 0;
 }
+
+.debugTable {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.debugTable * {
+    font-weight: 300;
+}

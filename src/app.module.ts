@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }  from './components/app/app.component';
 import { NoiseOptionService } from './services/noise-options.service';
+import { DebugService } from './services/debug.service';
 
 @NgModule({
 	imports: [
@@ -13,7 +14,8 @@ import { NoiseOptionService } from './services/noise-options.service';
 		AppComponent,
 	],
 	providers: [
-		NoiseOptionService
+		NoiseOptionService,
+		DebugService
 	],
 	bootstrap: [ AppComponent ]
 })

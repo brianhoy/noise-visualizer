@@ -22,9 +22,9 @@ const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR = new Provider(
 })
 export class SliderComponent implements ControlValueAccessor {
     constructor(@Optional() ngControl: NgControl) {
-    if (ngControl) {
-        ngControl.valueAccessor = this;
-        }
+        if (ngControl) {
+            ngControl.valueAccessor = this;
+            }
     }
 
     private min: number;
