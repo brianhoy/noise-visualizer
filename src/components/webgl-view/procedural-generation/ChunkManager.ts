@@ -53,7 +53,10 @@ export class ChunkManager {
 		{
 			let mChunk = this.chunks[this.renderDistance][this.renderDistance];
 			this.shift(-this.deltaChunkCoordinates.x , -this.deltaChunkCoordinates.z); // negative the difference you want to shift the chunks
+			//console.log("chunks before sending to stream (should be nulls)", JSON.stringify(this.chunks));
 			this.debugChunkStream.next(this.chunks);
+
+			console.log("shifting negative ",this.deltaChunkCoordinates)
 
 			this.fillNullChunks(this.playerChunkCoordinates.x, this.playerChunkCoordinates.z);
 			setTimeout(() => {this.debugChunkStream.next(this.chunks);}, 500);
@@ -70,6 +73,7 @@ export class ChunkManager {
                 	} 
 
 					if(j < x) {
+						console.log("nulling chunk ", i, j);
 						this.chunks[i][j] = null;
 					}
 					else {
@@ -87,6 +91,7 @@ export class ChunkManager {
 
 					if(j - x >= this.chunks[i].length) {
 						this.chunks[i][j] = null;
+						console.log("nulling chunk ", i, j);
 					}
 					else {
 						this.chunks[i][j] = this.chunks[i][j - x];
@@ -102,6 +107,7 @@ export class ChunkManager {
                   			this.unloadChunk(this.chunks[i][j], x, y);
 						}
 						this.chunks[i][j] = null;
+						console.log("nulling chunk ", i, j);
 					}
 				}
 				else {
@@ -122,6 +128,7 @@ export class ChunkManager {
                   			this.unloadChunk(this.chunks[i][j], x, y);
 						}
 						this.chunks[i][j] = null;
+						console.log("nulling chunk ", i, j);
 					}
 				}
 				else {

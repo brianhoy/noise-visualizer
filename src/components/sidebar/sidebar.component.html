@@ -15,7 +15,7 @@
 	<h2>Debug</h2>
 	<table class="debugTable">
 		<tr *ngFor="let debugChunkArray of debugChunks">
-			<th *ngFor="let debugChunk of debugChunkArray">x: {{Math.round(debugChunk.mesh.getWorldPosition().x/10)*10}}, y: {{Math.round(debugChunk.mesh.position.z/10)*10}}</th>
+			<th *ngFor="let debugChunk of debugChunkArray">x: {{Math.round(debugChunk.mesh.geometry.getAttribute('position').array[0]/10)*10}}, z: {{Math.round(debugChunk.mesh.geometry.getAttribute('position').array[2]/10)*10}}</th>
 		</tr>
 	</table>
 </div>

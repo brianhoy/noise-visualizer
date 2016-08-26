@@ -36,7 +36,7 @@ export class Generator {
 			fog: true,
 			transparent: true,
 			color: new THREE.Color(10, 150, 20),
-			map: this.grassTexture || THREE.ImageUtils.loadTexture( 'images/grass.png' )
+			map: null // this.grassTexture || THREE.ImageUtils.loadTexture( 'images/grass.png' )
 		};
 
 		let myUniforms = {
