@@ -5168,7 +5168,9 @@ declare namespace THREE {
     }
 
     export interface Shader {
-        uniforms: IUniform;
+        uniforms: {
+            [propertyName: string]: IUniform
+        };
         vertexShader: string;
         fragmentShader: string;
     }
