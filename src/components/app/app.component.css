@@ -1,5 +1,5 @@
 .sidebar {
-    overflow-y: scroll;
+    /*overflow-y: scroll; */
     overflow-x: hidden;
     background-color: #F3F3F3;
     width: 250px;

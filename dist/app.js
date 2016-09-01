@@ -5178,7 +5178,7 @@ webpackJsonp([0],{
 /***/ 676:
 /***/ function(module, exports) {
 
-	module.exports = ".sidebar {\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n    background-color: #F3F3F3;\r\n    width: 250px;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n}\r\n\r\n.sidebar h1 {\r\n    color: white;\r\n}\r\n\r\n.content {\r\n    background-color: white;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 250px;\r\n    right: 0;\r\n    bottom: 0;\r\n}\r\n\r\n.content-container {\r\n    display: flex;\r\n    flex-flow: column;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.webgl {\r\n    min-height: 400px;\r\n    flex-grow: 1;\r\n}\r\n\r\n.options {\r\n\r\n}"
+	module.exports = ".sidebar {\r\n    /*overflow-y: scroll; */\r\n    overflow-x: hidden;\r\n    background-color: #F3F3F3;\r\n    width: 250px;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n}\r\n\r\n.sidebar h1 {\r\n    color: white;\r\n}\r\n\r\n.content {\r\n    background-color: white;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 250px;\r\n    right: 0;\r\n    bottom: 0;\r\n}\r\n\r\n.content-container {\r\n    display: flex;\r\n    flex-flow: column;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.webgl {\r\n    min-height: 400px;\r\n    flex-grow: 1;\r\n}\r\n\r\n.options {\r\n\r\n}"
 
 /***/ }
 
