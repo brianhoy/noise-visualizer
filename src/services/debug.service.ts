@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject'; 
-import { Chunk } from '../components/webgl-view/procedural-generation/Chunk';
+import { Chunk } from '../models/Chunk';
 
 @Injectable()
 export class DebugService {

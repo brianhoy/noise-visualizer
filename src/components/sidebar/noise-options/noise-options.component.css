@@ -1,0 +1,18 @@
+:host {
+    background-color: white;
+    z-index: 1;
+}
+
+label {
+    padding-right: 5px;    
+    font-weight: bold;
+}
+
+input, select {
+    float: right;
+}
+
+.option {
+    padding: 3px;
+    border-top: 1px solid #ddd;
+}

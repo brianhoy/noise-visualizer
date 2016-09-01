@@ -1,23 +1,24 @@
-import { Component } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
+import { SliderComponent } from '../../general/form-controls/slider.component';
+import { ThreeDOptionsModel } from '../../../models/three-d-options.model';
+import { ViewOptionService } from '../../../services/view-options.service';
 
 @Component({
     selector: "three-d-options",
+    directives: [SliderComponent],
     templateUrl: "./3d-options.component.html",
-    styleUrls: ["../options.css"]
+    styleUrls: ["../options.css"],
+    encapsulation: ViewEncapsulation.None
 })
 export class ThreeDOptionsComponent {
-    public vertices: number;
+    public options: ThreeDOptionsModel;
 
-    constructor() {
-        this.vertices = 20;
-    }
-
-    updateVerticesSlider(e: Event) {
-        let element = <HTMLInputElement> e.srcElement;
-        this.vertices = parseFloat(element.value);
+    constructor(private viewOptionService: ViewOptionService) {
+        this.options = new ThreeDOptionsModel();
     }
 
     updateView() {
+        this.viewOptionService.viewOptionStream.next(this.options);
         console.log("updating view");
     }
 }

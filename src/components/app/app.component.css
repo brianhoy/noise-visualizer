@@ -1,6 +1,7 @@
 .sidebar {
     overflow-y: scroll;
-    background-color: #eee;
+    overflow-x: hidden;
+    background-color: #F3F3F3;
     width: 250px;
     position: fixed;
     top: 0;
@@ -19,9 +20,6 @@
     left: 250px;
     right: 0;
     bottom: 0;
-    
-    -moz-transition: left 0.5s ease;
-    transition: left 0.5s ease;
 }
 
 .content-container {
@@ -38,29 +36,4 @@
 
 .options {
 
-}
-
-input[type=checkbox] {
-   display: none;
-}
-
-input:checked ~ .content { 
-    left: 0;
-}
-
-input:checked ~ label {
-    left: 0;
-}
-
-label {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    left: 250px;
-    background-color: gray;
-    color: white;
-    cursor: pointer;
-
-    -moz-transition: left 0.5s ease;
-    transition: left 0.5s ease;
 }

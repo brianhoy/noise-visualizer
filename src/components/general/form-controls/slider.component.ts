@@ -35,7 +35,7 @@ export class SliderComponent implements ControlValueAccessor {
     private startingValue: number;
     private description: string;
 
-    private _value: any = '';
+    private _value: number = 0;
 
     public getValue(): any {
         return this._value;
@@ -47,8 +47,8 @@ export class SliderComponent implements ControlValueAccessor {
 
     public set value(v: any) {
         if (v !== this._value) {
-            this._value = v;
-            this.onChange(v);
+            this._value = parseFloat(v);
+            this.onChange(parseFloat(v));
         }
     }
 

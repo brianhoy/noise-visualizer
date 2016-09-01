@@ -1,19 +1,17 @@
-<div class="tree-node">
-    <button [class.selected]="selectedNoise" class="noise-header">
-        <div>
-            <div class="toggleContainer" (click)="toggleShowChildren()">
+<div (contextmenu)="onContextMenu($event)" class="tree-node">
+    <button (click)="toggleShowChildren()" [class.selected]="selectedNoise" class="noise-header">
+        <div [style.margin-left]="xoffset+'px'">
+            <div class="toggleContainer" >
                 <i *ngIf="!showChildren" class="fa fa-caret-right"></i>
                 <i *ngIf="showChildren" class="fa fa-caret-down"></i>
             </div>
-            <h3 (click)="selectNoise()">{{ noiseModel.type }}</h3>
+            <h3>{{ noiseModel.type }}</h3>
         </div>
-        <div (click)="addChildNoise()">
-            <i style="color: green" class="fa fa-plus-circle"></i>
-        </div>
+        <context-menu></context-menu>
     </button>
-    <ul *ngIf="showChildren">
+    <ul [hidden]="!showChildren">
         <li *ngFor="let child of noiseModel.children">
-            <noise-tree [noiseModel]="child"></noise-tree>
+            <noise-tree [xoffset]="xoffset + 10" [noiseModel]="child"></noise-tree>
         </li>
     </ul>
 </div>

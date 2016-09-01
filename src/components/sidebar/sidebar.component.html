@@ -1,67 +1,41 @@
 <h1> Noise Visualizer </h1>
-<div class="tab-container">
-	<div class="tab" [class.selected]="selectedTab == 2" (click)="selectTab(2)">2D Image</div>
-	<div class="tab" [class.selected]="selectedTab == 3" (click)="selectTab(3)">3D Heightmap</div>
-</div>
-<div class="tab-content">
-	<two-d-options *ngIf="selectedTab == 2"> </two-d-options>
-	<three-d-options *ngIf="selectedTab == 3"> </three-d-options>
+<div class="display-options">
+	<div class="section-header" (click)="toggleSection('displayOptions')">
+		<div class="toggle-container">
+			<i *ngIf="!toggled.displayOptions" class="fa fa-caret-right"></i>
+			<i *ngIf="toggled.displayOptions" class="fa fa-caret-down"></i>
+		</div>
+		<h2 >Display Options</h2>
+	</div>
+	<three-d-options [hidden]="!toggled.displayOptions"> </three-d-options>
 </div>
 <div class="noises">
-	<h2>Noise Tree</h2>
-	<noise-tree [noiseModel]="baseNoise"></noise-tree>
-</div>
-<div class="debug">
-	<h2>Debug</h2>
-	<table class="debugTable">
-		<tr *ngFor="let debugChunkArray of debugChunks">
-			<th *ngFor="let debugChunk of debugChunkArray">x: {{Math.round(debugChunk.mesh.geometry.getAttribute('position').array[0]/10)*10}}, z: {{Math.round(debugChunk.mesh.geometry.getAttribute('position').array[2]/10)*10}}</th>
-		</tr>
-	</table>
-</div>
-
-<!--<div class="sidebar">
-	<div class="pure-menu">
+	<div class="section-header" (click)="toggleSection('noiseTree')">
+		<div class="toggle-container">
+			<i *ngIf="!toggled.noiseTree" class="fa fa-caret-right"></i>
+			<i *ngIf="toggled.noiseTree" class="fa fa-caret-down"></i>
+		</div>
+		<h2 [style.cursor]="'help'" title="Right click items on the noise tree to see a context menu that allows you to select, add, or delete noise.">Noise Tree</h2>
 	</div>
-</div> 
-
-<a class="pure-menu-heading">Noise</a>
-<ul class="pure-menu-list">
-	<li class="pure-menu-item display-options">
-		<a class="menu-category">Display Options</a>
-		<div class="switches">
-			<div id="3dOptionTab" onclick="Sidebar.onTabClicked('3d')" class="switch" active>
-				3D
-			</div>
-			<div id="2dOptionTab" onclick="Sidebar.onTabClicked('2d')" class="switch">
-				2D
-			</div>
+	<noise-tree [hidden]="!toggled.noiseTree" [xoffset]="0" [root]="true" [noiseModel]="baseNoise"></noise-tree>
+</div>
+<div class="noise-options">
+	<div class="section-header" (click)="toggleSection('noiseOptions')">
+		<div class="toggle-container">
+			<i *ngIf="!toggled.noiseOptions" class="fa fa-caret-right"></i>
+			<i *ngIf="toggled.noiseOptions" class="fa fa-caret-down"></i>
 		</div>
-		<div class="options" id="2dOptions" style="display: none">
+		<h2  [style.cursor]="'help'" title="To modify the options of a different noise, select a different one using the noise tree above.">Noise Options</h2>
+	</div>
+	<noise-options [hidden]="!toggled.noiseOptions"></noise-options>
+</div>
+<div class="stringified-noise">
+	<div class="section-header" (click)="toggleSection('stringifiedNoise')">
+		<div class="toggle-container">
+			<i *ngIf="!toggled.stringifiedNoise" class="fa fa-caret-right"></i>
+			<i *ngIf="toggled.stringifiedNoise" class="fa fa-caret-down"></i>
 		</div>
-		<div class="options" id="3dOptions">
-			<div class="option">
-				<div class="row">
-					<label class="option-label" for="vertices-slider">
-						Vertices
-					</label>
-				</div>
-				<div class="row">
-					<div>5</div>
-					<input min="5" value="20" max="1000" class="slider" id="vertices-range-slider" 
-						onchange="Sidebar.changeVerticesValue()" name="vertices-slider" type="range">
-					<div>1000</div>
-				</div>
-				<div class="row">
-					<div id="vertices-slider-value">20</div>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li class="pure-menu-item display-options">
-		<a class="menu-category">Noise Functions</a>
-		<div id="noise-functions">
-			
-		</div>
-	</li>
-</ul> -->
+		<h2>Stringified</h2>
+	</div>
+	<stringified-noise [hidden]="!toggled.stringifiedNoise"></stringified-noise>
+</div>

@@ -1,11 +1,14 @@
 <div class="main-wrap">
-    <input id="slide-sidebar" type="checkbox" role="button" />
-        <label for="slide-sidebar"><span>close</span></label>
-    <div class="sidebar"><sidebar></sidebar></div>
-    <div class="content">
+    <div mwlResizable 
+            [resizeEdges]="{bottom: false, right: true, top: false, left: false}"
+            [enableGhostResize]="true"
+            [validateResize]="validateSidebarResize"
+            [ngStyle]="sidebarStyle"
+            (resizeEnd)="onSidebarResizeEnd($event)"
+             class="sidebar"><sidebar></sidebar></div>
+    <div [ngStyle]="contentStyle" class="content">
         <div class="content-container">
             <webgl-view class="webgl"></webgl-view>
-            <noise-option-panel class="options"></noise-option-panel>
         </div>
     </div>
 </div>

@@ -38,6 +38,10 @@ module.exports = {
         test: /\.css$/,
         include: helpers.root('src', 'components'),
         loader: 'raw'
+      },
+      {
+        test: /\.worker.js$/,
+        loader: 'worker-loader'
       }
     ]
   },
@@ -49,6 +53,6 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
   ]
 };

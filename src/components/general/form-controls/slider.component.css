@@ -1,6 +1,26 @@
 :host {
+    margin: 2px;
     display: block;
 }
+
+.header-row {
+    display: inline-block;
+    width: 100%;
+}
+
+.header-row label {
+    width: 60%;
+    cursor: help;
+    display: inline-block;
+}
+
+.header-row input {
+    float: right;
+    z-index: -1;
+    width: 30%;
+    display: inline-block;
+}
+
 
 .slider {
     padding: 5px 0 5px 0;
@@ -30,5 +50,4 @@ p {
 
 input[type="number"] {
     text-align: center;
-    border: none;
 }

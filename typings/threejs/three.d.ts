@@ -678,7 +678,7 @@ declare namespace THREE {
         normalized: boolean;
         needsUpdate: boolean;
         count: number;
-
+        position: any;
 
         setDynamic(dynamic: boolean): BufferAttribute;
         clone(): BufferAttribute;
@@ -769,7 +769,7 @@ declare namespace THREE {
         name: string;
         type: string;
         index: BufferAttribute;
-        attributes: BufferAttribute|InterleavedBufferAttribute[];
+        attributes: any; //BufferAttribute|InterleavedBufferAttribute[];
         morphAttributes: any;
         groups: {start: number, count: number, materialIndex?: number}[];
         boundingBox: Box3;
@@ -1409,6 +1409,7 @@ declare namespace THREE {
         count: number;
         normalized: boolean;
         array: any[];
+        position: any;
 
         getX(index: number): number;
         setX(index: number, x: number): InterleavedBufferAttribute;

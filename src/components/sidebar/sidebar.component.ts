@@ -1,33 +1,32 @@
-import { Component } from '@angular/core';
-import { ThreeDOptionsComponent } from './3d-options/3d-options.component';
-import { TwoDOptionsComponent } from './2d-options/2d-options.component';
-import { NoiseTreeComponent } from './noise-tree/noise-tree.component';
-import { NoiseModel } from '../../models/noise.model';
-import { Chunk } from '../webgl-view/procedural-generation/Chunk';
-import { DebugService } from '../../services/debug.service';
+import {Component} from '@angular/core';
+import {ThreeDOptionsComponent} from './3d-options/3d-options.component';
+import {NoiseTreeComponent} from './noise-tree/noise-tree.component';
+import {NoiseOptionsComponent} from './noise-options/noise-options.component';
+import {StringifiedNoiseComponent} from './stringified-noise/stringified-noise.component';
+
+import {NoiseModel} from '../../models/noise.model';
+import {Chunk} from '../../models/Chunk';
 
 @Component({
 	selector: 'sidebar',
-	directives: [ThreeDOptionsComponent, TwoDOptionsComponent, NoiseTreeComponent],
+	directives: [ThreeDOptionsComponent, NoiseTreeComponent, NoiseOptionsComponent, StringifiedNoiseComponent],
 	templateUrl: 'sidebar.component.html',
 	styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-	public selectedTab: number;
 	public baseNoise: any;
 	public debugChunks: Chunk[][];
 	private Math;
+	private toggled: { displayOptions: boolean, noiseTree: boolean, noiseOptions: boolean, stringifiedNoise: boolean};
 
-	constructor(private debugService: DebugService) {
+	constructor() {
+		this.toggled = { displayOptions: false, noiseTree: false, noiseOptions: false, stringifiedNoise: false };
 		this.Math = Math;
 		this.baseNoise = new NoiseModel();
-		this.selectedTab = 3;
-		this.debugService.getChunkDebugStream().subscribe((chunks) => {
-			this.debugChunks = chunks;
-		});
 	 }
-	selectTab(tab: number) {
-		console.log("selecting tab", tab);
-		this.selectedTab = tab;
-	}
+
+	 private toggleSection(section: string): void {
+		 console.log("toggling section", section);
+		 this.toggled[section] = !this.toggled[section];
+	 }
 }

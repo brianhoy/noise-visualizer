@@ -1,18 +1,20 @@
-<h2>3d Display Options</h2>
 <div class="option">
-    <div class="row">
-        <label class="option-label" for="vertices-slider">
-            Vertices
-        </label>
-    </div>
-    <div class="slider-container">
-        <div>5</div>
-        <input min="5" value="20" max="1000" class="slider" id="vertices-range-slider" 
-            (change)="updateVerticesSlider($event)" name="vertices-slider" type="range">
-        <div>1000</div>
-    </div>
-    <div class="row">
-        <div> {{ vertices }} </div>
-    </div>
+    <slider [min]="1000" [max]="100000" [label]="'Render Distance'"
+        [(ngModel)]="options.renderDistance"
+        [description]="'Chunks within this radius from the OrbitControls target are loaded'"
+        [sliderName]="renderDistance" [startingValue]="25000" [step]="1000"></slider>
 </div>
+<div class="option">
+    <slider [min]="500" [max]="10000" [label]="'Chunk Size'"
+        [(ngModel)]="options.chunkSize"
+        [description]="'The size of each chunk, in Three.JS units'"
+        [sliderName]="chunkSize" [startingValue]="5000" [step]="10"></slider>
+</div>
+<div class="option">
+    <slider [min]="1" [max]="200" [label]="'Chunk Segments'"
+        [(ngModel)]="options.segmentsPerChunk"
+        [description]="'Number of segments in each edge of the chunk mesh. A higher value means that the noise will be more accurately represented.'"
+        [sliderName]="chunkSegments" [startingValue]="30" [step]="1"></slider>
+</div>
+
 <button (click)="updateView()" class="pure-button">Update View</button>
