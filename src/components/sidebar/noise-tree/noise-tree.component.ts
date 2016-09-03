@@ -32,9 +32,14 @@ export class NoiseTreeComponent implements OnInit {
     }
     addChildNoise() {
         console.log("calling updateRootNoise");
-        setInterval(() => {this.showChildren = true}, 0);
-        this.noiseModel.children.push(new NoiseModel());
-        this.noiseOptionService.updateRootNoise(this.noiseModel);
+        let newNoise = new NoiseModel();
+        setTimeout(() => {
+            this.showChildren = true;
+            this.noiseOptionService.selectNoise(newNoise);
+        }, 0);
+        this.noiseModel.children.push(newNoise);
+        this.noiseOptionService.updateRootNoise();
+        //this.noiseOptionService.updateRootNoise(this.noiseModel);
     }
     selectNoise() {
         console.log("selecting noise");

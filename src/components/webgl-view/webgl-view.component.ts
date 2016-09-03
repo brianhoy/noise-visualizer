@@ -68,18 +68,15 @@ export class WebglViewComponent implements OnInit {
 
 	initThreeJS() {
 		let lastWidth = this.nativeElement.offsetWidth;
-		let lastHeight = this.nativeElement.offsetHeight;
+		let lastHeight = 0;
 
 		this.renderer = new THREE.WebGLRenderer();
 		this.renderer.setSize(lastWidth, lastHeight);
 		this.resizeService.sidebarResizeStream.subscribe((newSidebarWidth) => {
 			lastWidth = window.innerWidth - newSidebarWidth;
-			this.renderer.setSize(lastWidth, lastHeight);
+			this.renderer.setSize(lastWidth, window.innerHeight);
 		});
-		this.resizeService.noisePanelResizeStream.subscribe((newPanelHeight) => {
-			lastHeight = window.innerHeight - newPanelHeight;
-			this.renderer.setSize(lastWidth, lastHeight);
-		})
+
 		this.nativeElement.appendChild(this.renderer.domElement);
 
 	}
